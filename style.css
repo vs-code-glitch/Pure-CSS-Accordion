@@ -1,0 +1,67 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: arial,sans-serif;
+  background-color: #FD7272;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  /* max-height: 100vh; */
+  overflow: hidden; 
+}
+
+.accordion{
+  
+  width:50%;
+  margin:50px;
+  background: #fff;
+}
+
+.accordion-tab .accordion-toggle{
+  display: none;
+}
+
+.accordion-tab > label{
+  color:#fff;
+  background: #25CCF7;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  position: relative;
+  display: block;
+  padding:12px 20px 20px 12px;
+  cursor: pointer;
+  border-top:1px solid #ddd;
+}
+.accordion-tab >label:after{
+  content:"\f055";
+  font-family: fontawesome;
+  position: absolute;
+  top:13px;
+  right:20px;
+  transition: all .3s;
+}
+.accordion-tab > .accordion-content p{
+  padding:15px 20px;
+  line-height: 20px;
+}
+.accordion-tab > .accordion-content{
+  /* padding:20px; */
+  max-height: 0;
+  transition:all .4s;
+  overflow:hidden;
+}
+
+.accordion-tab > .accordion-toggle:checked ~ .accordion-content{
+  max-height:100vh;
+  padding:20px;
+}
+
+.accordion-tab > .accordion-toggle:checked ~ label:after{
+  content:"\f056";
+  font-family: fontawesome;
+}
